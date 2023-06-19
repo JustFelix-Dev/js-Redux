@@ -43,9 +43,7 @@ const reducer = ( state = initialState,action)=>{
 
 const store = createStore(reducer,applyMiddleware(logger));
 console.log("Initial State:", store.getState())
-const unsubscribe = store.subscribe(()=>{
-    console.log("Updated State :", store.getState())
-})
+const unsubscribe = store.subscribe(()=>{})
 
 store.dispatch(updateStreet());
 
