@@ -1,6 +1,10 @@
 const redux = require('redux');
 const createStore = redux.createStore
+const applyMiddleware = redux.applyMiddleware
+
 const produce = require('immer').produce
+const reduxLogger = require('redux-logger');
+const logger = reduxLogger.createLogger()
 const initialState = {
     name : "Felix",
     address : {
@@ -37,7 +41,7 @@ const reducer = ( state = initialState,action)=>{
     }
 }
 
-const store = createStore(reducer);
+const store = createStore(reducer,applyMiddleware(logger));
 console.log("Initial State:", store.getState())
 const unsubscribe = store.subscribe(()=>{
     console.log("Updated State :", store.getState())
