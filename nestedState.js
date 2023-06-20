@@ -5,6 +5,7 @@ const applyMiddleware = redux.applyMiddleware
 const produce = require('immer').produce
 const reduxLogger = require('redux-logger');
 const logger = reduxLogger.createLogger()
+
 const initialState = {
     name : "Felix",
     address : {

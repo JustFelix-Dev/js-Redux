@@ -27,13 +27,14 @@ const fetchedUsersSucceed=(users)=>{
     }
 }
 
+
 const fetchUsersFailed = (error)=>{
     return {
         type : FETCHED_USER_FAILED,
         payload: error
     }
-
 }
+
 
 const reducer = (state = initialState,action)=>{
     switch(action.type){
